@@ -1,0 +1,43 @@
+Boyer–Moore majority vote algorithm
+
+Intution:
+Assume there is a majority number.
+If we increment everytime we encounter the majority number, and decrement everytime we
+DON'T encounter the majority number, the counter value at the end of the loop would be positive. 
+This counter may become <=0 sometimes during the iteration, which means the majority number was
+not in majority from array[0... current_index]. 
+
+This implies that the majority number should definitely be in majority in the array[current_index...n-1]
+(let's call it THE_REQUIREMENT), since majority number must be in majority in one of the 2 sections
+of the array.
+
+We don't know the majority number at the start. We can assume for the time being that the first element is
+majority, and stop if the counter becomes <=0. Whatever is the true majority number (the first
+element or some other number), it was not in majority till current_index. Hence, we majority number should
+be in majority in the a[current_index..n-1] as mentioned earlier. We repeat this, i.e. pick first element
+of this new section and so on, till the counter does not become 0, that is we have found a potential
+candidate for majority number since it satisfies the THE_REQUIREMENT.
+
+https://leetcode.com/problems/majority-element/ - here it is already mentioned that a majority number
+surely exists. Hence it is not necessary to verify that via another loop i.e. count if the candidate
+actually occurs more than n/2 times.
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int mx=nums[0];
+        int cnt=1;
+        for (int i=1;i<nums.size();i++) {        
+            if (mx==nums[i]) {
+                cnt++;
+            } else {
+                cnt--;
+            }
+            if (cnt==0) {
+                mx = nums[i];
+                cnt=1;
+            }
+        }
+        return mx;
+    }
+};
