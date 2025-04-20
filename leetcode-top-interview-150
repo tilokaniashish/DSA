@@ -1,0 +1,50 @@
+https://leetcode.com/problems/unique-paths-ii/description/?envType=study-plan-v2&envId=top-interview-150
+
+---------------------------------------------------------------------------
+HEAP
+
+1. kth-largest-element-in-an-array
+
+Put all of them in a heap, and then pop out. 
+Heapify: O(n). Pop: O(logn).
+K* O(logn) + O(n).
+
+
+---------------------------------------------------------------------------
+
+Multidimensional DP
+
+1. maximal-square
+
+dp[i][j] denotes dimension of square. Answer will be dp[i][j] * dp[i][j].
+
+if (a[i][j]==1) {
+  dp[i][j] = min(dp[i-1][j-1],length[i-1][j], breadth[i][j-1]) + 1;
+}
+
+2. unique-paths-ii
+
+dp[i][j] denotes unique paths
+
+if (!obstacle(i,j)) {
+  dp[i][j] = dp[i][j-1] + dp[i-1][j]
+}
+
+3. minimum-path-sum
+
+dp[i][j] = a[i][j] + min(dp[i-1][j] , dp[i][j-1]);
+
+4. triangle
+
+// go from i=n-1 to i=0
+dp[i][j] = min(dp[i+1][j] , dp[i+1][j+1]);
+
+5. best-time-to-buy-and-sell-stock-iv
+
+TODO
+
+---------------------------------------------------------------------------
+
+
+
+
