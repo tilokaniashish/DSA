@@ -1,0 +1,20 @@
+Max heap, min heap.
+
+Building a heap O(n):
+
+For each (leaf node to root node) Heapify;
+Heapify: compare current node to left and right node, and swap with the larger. Then recursively call heapify for the swapped node;
+
+Time complexity looks like O(nlogn) but is actually O(n).
+
+https://www.geeksforgeeks.org/time-complexity-of-building-a-heap/
+https://www.geeksforgeeks.org/building-heap-from-array/
+
+Deleting a node O(logn):
+
+Swap the last with root. Reduce size. Call heapify on root.
+https://www.geeksforgeeks.org/insertion-and-deletion-in-heaps/
+
+Inserting a node O(logn):
+
+Add new element at the end. Heapify by comparing with the root node, and repeat till reach root.
