@@ -5,10 +5,39 @@ HEAP
 
 1. kth-largest-element-in-an-array
 
-Put all of them in a heap, and then pop out. 
+a. Put all of them in a max heap, and then pop out. 
 Heapify: O(n). Pop: O(logn).
 K* O(logn) + O(n).
 
+b. Insert the first K in heap, and then replace with the items in remaining N-K if they are larger than the top of the max heap.
+
+c. Quicksort's partition.
+
+
+2. IPO
+
+Basic version: If unlimited capital, then find top K projects with maximum profit.
+
+Actual version: If x capital, then among all projects with <=x capital, chose the one with the maximum profit.
+
+Sort projects by capital.
+c1, c2, c3, c4, c5, c6, c7, c8
+p1, p2, p3, p4, p5, p6, p7, p8
+
+Iterate until you have processed all projects with <=x capital, then pick the one from the heap with max profit.
+Iterate until you have processed all projects with <=x+px capital, then pick the one from the heap with max profit.
+
+After loop, keep on picking projects until you have picked all k projects, as long as you have the capital.
+
+O(nlogn) + O(nlogn) + O(klogn)
+Sorting + Insert N + Pop k
+
+3. find-k-pairs-with-smallest-sums
+
+Insert first element from 1st array, and first element from the 2nd array, in the min heap as:
+(ai + bj, i, j)
+
+K times -> pop, insert (sum, i+1, j), (sum, i, j+1), (sum, i+1, j+1). Use set to avoid inserting same thing multiple times.
 
 ---------------------------------------------------------------------------
 
