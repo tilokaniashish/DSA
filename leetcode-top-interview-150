@@ -74,6 +74,30 @@ TODO
 
 ---------------------------------------------------------------------------
 
+Graph BFS
+
+1. Word ladder
+
+// Insert beginWord in queue.
+// Until queue is empty, pop out word, then find out adjacent words, see if they are in the worldlist map.
+// If yes, insert them. 
+// What if they are already inserted? Use another map to keep track of whether they have already been inserted
+// and what is the min distance.
+
+---------------------------------------------------------------------------
+
+Graph General
+
+1. Course schedule
+
+// Keep track of number of nodes.
+// Find node with indegree 0. If none exists, but number of nodes are left, then return false.
+// If exists, then reduce indegree for all of its neighbors.
+// Repeat.
+https://www.geeksforgeeks.org/topological-sorting-indegree-based-solution/
+
+2. Course schedule II
+
 
 
 
