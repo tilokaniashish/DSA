@@ -98,6 +98,8 @@ https://www.geeksforgeeks.org/topological-sorting-indegree-based-solution/
 
 2. Course schedule II
 
+Similar to above, just insert element in vector once you pop it.
+
 
 
 
