@@ -1,0 +1,5 @@
+bool customComparison(int a, int b) {
+  return a < b; // sorts in ascending order
+}
+
+sort(myVec.begin(), myVec.end(), customComparison);
